@@ -19,5 +19,10 @@ console.log('Importing module');
 // Avoid this 
 // import add, { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 
-import add from './shoppingCart.js';
+import add, {cart} from './shoppingCart.js';
 add('pizza', 2);
+add('bread', 5);
+add('apples', 4);
+
+console.log(cart);
+// Imports/Exports are a live connection, not a static copy
