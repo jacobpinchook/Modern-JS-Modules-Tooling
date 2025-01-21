@@ -15,7 +15,6 @@ console.log('Importing module');
 // console.log(ShoppingCart.totalPrice);
 
 // Default import/export
-
 // Avoid this 
 // import add, { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 
@@ -23,6 +22,11 @@ import add, {cart} from './shoppingCart.js';
 add('pizza', 2);
 add('bread', 5);
 add('apples', 4);
-
-console.log(cart);
 // Imports/Exports are a live connection, not a static copy
+console.log(cart);
+
+console.log('Start fetch');
+const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+const data = await res.json();
+console.log(data);
+console.log('Something');
