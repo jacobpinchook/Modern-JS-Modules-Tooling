@@ -60,7 +60,8 @@ const ShoppingCart2 = (function() {
 
     const addToCart = function(product, quantity) {
         cart.push({product, quantity});
-        console.log(`${quantity} ${product} added to cart`);
+        console.log(`${quantity} ${product} added to cart (shipping cost is $${shippingCost})`);
+        // ^^ Accessing the private shippingCost variable through closure
     };
 
     const orderStock = function(product, quantity) {
@@ -75,6 +76,8 @@ const ShoppingCart2 = (function() {
         totalQuantity,
     };
 })(); 
+// ^^ Example of a closure
+// Closures allow a function to have access to all of the variables that were present at it's birthplace
 
 ShoppingCart2.addToCart('apple', 4);
 ShoppingCart2.addToCart('pizza', 2);
