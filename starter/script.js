@@ -1,4 +1,4 @@
-/*
+
 
 // Importing module
 // import { 
@@ -26,6 +26,8 @@ add('bread', 5);
 add('apples', 4);
 // Imports/Exports are a live connection, not a static copy
 console.log(cart);
+
+/*
 
 // Simple top-level await
 // console.log('Start fetch');
@@ -108,9 +110,8 @@ const { addToCart } = require('./shoppingCart.js');
 
 // -------------------------------------
 
-/*
 
-import cloneDeep from '../node_modules/lodash-es/cloneDeep';
+import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
 
 const state = {
     cart: [
@@ -120,6 +121,13 @@ const state = {
     user: { loggedIn: true },
 };
 const stateClone = Object.assign({}, state);
+const stateDeepClone = cloneDeep(state);
+
+state.user.loggedIn = false;
 console.log(stateClone);
 
-*/
+console.log(stateDeepClone);
+
+if(module.hot) {
+    module.hot.accept();
+}
