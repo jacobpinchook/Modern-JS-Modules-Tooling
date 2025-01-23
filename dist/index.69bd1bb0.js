@@ -725,6 +725,8 @@ class Person {
 }
 const jonas = new Person('Jonas');
 console.log('Jonas' ?? null);
+console.log((0, _shoppingCartJs.cart).find((el)=>el.quantity >= 2));
+Promise.resolve('TEST').then((x)=>console.log(x));
 
 },{"./shoppingCart.js":"eWLX8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../node_modules/lodash-es/cloneDeep.js":"dd5At"}],"eWLX8":[function(require,module,exports,__globalThis) {
 // Exporting module
