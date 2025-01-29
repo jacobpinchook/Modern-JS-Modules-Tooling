@@ -21,6 +21,7 @@ const spendingLimits = Object.freeze({
 
 const getLimit = user => spendingLimits?.[user] ?? 0;
 
+// Pure function
 const addExpense = function (
   state, 
   limits, 
@@ -32,9 +33,7 @@ const addExpense = function (
 
   // const limit = spendingLimits[user] ? spendingLimits[user] : 0;
 
-  if (value <= getLimit(cleanUser)) {
-    return [...state, { value: -value, description, user: cleanUser }];
-  }
+  return value <= getLimit(cleanUser) ? [...state, { value: -value, description, user: cleanUser }] : state;
 };
 const newBudget1 = addExpense(budget, spendingLimits, 10, 'Pizza 🍕');
 addExpense(budget, spendingLimits, 100, 'Going to movies 🍿', 'Matilda');
